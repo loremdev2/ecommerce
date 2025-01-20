@@ -1,5 +1,5 @@
-import { ModeToggle } from "@/components/ThemeProvider/ModeToggle"
-import { UserButton } from "@clerk/nextjs"
+import { ModeToggle } from "@/components/ThemeProvider/ModeToggle";
+import { UserButton } from "@clerk/nextjs";
 
 export default function SetupPage() {
   return (
@@ -8,6 +8,7 @@ export default function SetupPage() {
         <ModeToggle />
         <UserButton />
       </div>
+      <h1 className="text-center mt-10">Welcome to the Setup Page</h1>
     </div>
-  )
+  );
 }
