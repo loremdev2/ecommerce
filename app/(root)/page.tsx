@@ -1,14 +1,26 @@
+"use client"
+import React, { useEffect } from 'react'
 import { ModeToggle } from "@/components/ThemeProvider/ModeToggle";
-import { UserButton } from "@clerk/nextjs";
+import { useStoreModal } from '@/hooks/use-store-modal';
 
 export default function SetupPage() {
+  const onOpen = useStoreModal((state) => state.onOpen);
+  const isOpen = useStoreModal((state) => state.isOpen);
+
+  useEffect(() => {
+    if (!isOpen) { // If the model is not opened , then open it 
+      onOpen();
+    }
+  }, [isOpen, onOpen]);
+
   return (
     <div className="relative h-screen">
       <div className="absolute top-4 right-4 flex items-center space-x-4">
         <ModeToggle />
-        <UserButton />
       </div>
-      <h1 className="text-center mt-10">Welcome to the Setup Page</h1>
+      <div className="flex items-center justify-center h-full">
+        Root Page
+      </div>
     </div>
   );
 }
