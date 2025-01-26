@@ -4,6 +4,7 @@ import "./globals.css";
 import { ClerkProvider } from "@clerk/nextjs";
 import { ThemeProvider } from "@/components/ThemeProvider/theme-provider";
 import ModalProvider from "@/providers/modal-provider";
+import prismadb from "@/lib/prismadb";
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],

@@ -19,4 +19,4 @@ if (process.env.NODE_ENV === 'production') {
 }
 
 // Export the PrismaClient instance so it can be used across the application
-ex
+export default prismadb;
